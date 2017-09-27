@@ -1,3 +1,14 @@
 <h1>
   {{title}}
 </h1>
+<h2> Add a Student </h2>
+<div>
+   <input type="number" [(ngModel)]="id" name="id" id="idnum" placeholder="enter id" #idnum>
+   <input type="text" [(ngModel)]="name" name="name" id="first" placeholder="enter name" #first>
+</div>
+<div>
+  <input type="submit" id="btn-login" class="btn btn-custom btn-lg btn-block" value="Add" (click)="addStudent(id,name)">
+</div>
+<div *ngIf="studentArray.length>0">
+<studentlist [studentDetail]="studentArray"></studentlist>
+ </div>
